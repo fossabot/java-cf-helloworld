@@ -21,14 +21,6 @@ jobs:
     - name: Test with Maven
       run: mvn -B clean test -f pom.xml
 
-    - name: Generate JaCoCo Badge
-      id: jacoco
-      uses: cicirello/jacoco-badge-generator@v2.0.0
-
-    - name: Log coverage percentage
-      run: |
-        echo "coverage = ${{ steps.jacoco.outputs.coverage }}"
-
   build:
     runs-on: ubuntu-20.04
     needs: [test]
@@ -41,7 +33,7 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
-        
+
     - name: Build with Maven
       run: mvn -B package -f pom.xml
 
