@@ -1,5 +1,7 @@
 # java-cf-helloworld
 
-Simple Java [Spring Boot](https://spring.io/projects/spring-boot) helloworld sample with Github Actions workflow cf push.
+![build](https://img.shields.io/github/workflow/status/macevil/java-cf-helloworld/testBuildDeployToCF)
+![license](https://img.shields.io/github/license/macevil/java-cf-helloworld)
+![language](https://img.shields.io/github/languages/top/macevil/java-cf-helloworld)
 
-![test, build & cf push](https://github.com/macevil/java-cf-helloworld/workflows/testBuildDeployToCF/badge.svg)
+Simple Java [Spring Boot](https://spring.io/projects/spring-boot) helloworld sample with Github Actions workflow cf push.
