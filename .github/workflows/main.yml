@@ -7,6 +7,17 @@ on:
   workflow_dispatch:
 
 jobs:
+  security:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v2
+      
+    - name: Run Snyk to check for vulnerabilities
+      uses: snyk/actions/node@master
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
   test:
     runs-on: ubuntu-20.04
 
@@ -24,7 +35,7 @@ jobs:
 
   build:
     runs-on: ubuntu-20.04
-    needs: [test]
+    needs: [test, security]
 
     steps:
     - name: Checkout the repository
